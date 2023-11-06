@@ -98,6 +98,7 @@
                         image_id: imagenId // Aquí puedes agregar más pares clave-valor según tus necesidades
                     },
                     success: function(response) {
+                        console.log("response: ",response);
                         // Maneja la respuesta del servidor en 'response'
                         const clientes = response.data.clientes;
                         console.log('Respuesta del servidor:', clientes);

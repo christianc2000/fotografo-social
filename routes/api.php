@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\EventoController;
 use App\Http\Controllers\Api\ImagenController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
@@ -28,4 +29,6 @@ Route::post('perfil/user/{id}', [UserController::class, 'perfil']);
 Route::post('perfil/user/password/{id}', [UserController::class, 'password_update']);
 //FOTOGRAFIA
 Route::post('analyze/imagen/fotografo/{id}', [ImagenController::class, 'analyze_image']);
-
+Route::post('analyze/detect_face/photo_perfil',[UserController::class,'detect_one_face']);
+//EVENTO
+Route::post('evento/update_status/{id}', [EventoController::class, 'update_status_event']);

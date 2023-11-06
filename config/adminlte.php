@@ -317,6 +317,12 @@ return [
             'url'         => 'user',
             'icon'        => 'fas fa-fw fa-user-tag',
         ],
+        ['header' => 'Organizador'],
+        [
+            'text'        => 'Eventos',
+            'url'         => 'evento',
+            'icon'        => 'fas fa-fw fa-calendar',
+        ],
         ['header' => 'Fotografo'],
         [
             'text'        => 'Imagenes',

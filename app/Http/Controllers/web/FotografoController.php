@@ -24,7 +24,9 @@ class FotografoController extends Controller
     public function index_imagen()
     {
         $user = Auth::user();
-        $imagenes = $user->images->where('tipo', 'F');
+        $imagenes = $user->images
+            ->where('tipo', 'F')
+            ->sortByDesc('created_at');
         return view('web.fotografo.index-imagen', compact('imagenes'));
     }
 

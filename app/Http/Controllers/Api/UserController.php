@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Foto;
 use App\Models\Image;
 use App\Models\User;
+use Aws\Rekognition\RekognitionClient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -78,6 +79,42 @@ class UserController extends BaseController
         } else {
             // La contraseña es incorrecta
             return $this->sendError($passwordMatches, 'fail');
+        }
+    }
+
+    public function detect_one_face(Request $request)
+    {
+        $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg|max:10240' // Permitir que la foto sea nula
+        ]);
+
+        $client_rekognition = new RekognitionClient([
+            'region' => 'us-east-1',
+            'version' => 'latest'
+        ]);
+        if ($request->hasFile('photo')) {
+            $uploadedFile = $request->file('photo');
+
+            // Verificar si la carga de la imagen fue exitosa
+            if ($uploadedFile->isValid()) {
+                $imageData = file_get_contents($uploadedFile->path());
+                $detect_image = $client_rekognition->detectFaces([
+                    'Image' => [
+                        'Bytes' => $imageData,
+                    ],
+                ]);
+               
+                if (count($detect_image['FaceDetails']) > 0) {
+                    // Si se detectaron caras, la carga es válida
+                    return $this->sendResponse($detect_image['FaceDetails'], 'Success');
+                }else{
+                    return $this->sendError('No hay rostros detectados', []);
+                }
+            } else {
+                return $this->sendError('file no valido', []);
+            }
+        } else {
+            return $this->sendError('no es un file', []);
         }
     }
 }

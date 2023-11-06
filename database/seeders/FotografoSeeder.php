@@ -35,7 +35,7 @@ class FotografoSeeder extends Seeder
         ]);
         //PERFIL FOTOGRAFO
         $image = new Image([
-            'url' => 'perfil/b5Q97N6jUF0iLyrjFQn0CQpvNSlCUm5z2WKnbF07.jpg',
+            'url' => 'perfil/Christian.jpeg',
             'tipo' => 'P'
         ]);
         $user->images()->save($image);
@@ -43,25 +43,25 @@ class FotografoSeeder extends Seeder
 
         $imagenes = [
             [
-                'url' => 'galeria_imagenes_fotografo/aUxBG4MnObyfDMEPv12MHEy8GSXfqoUstIwEOsBI.jpg',
+                'url' => 'galeria_imagenes_fotografo/IMG-20190519-WA0017.jpg',
                 'tipo' => 'F'
             ],
             [
-                'url' => 'galeria_imagenes_fotografo/hzhctvi11YjRxkNkHdAZvFEen3xn5ZSJBgFtOPSW.jpg',
+                'url' => 'galeria_imagenes_fotografo/IMG-20190519-WA0052.jpg',
                 'tipo' => 'F'
             ],
             [
-                'url' => 'galeria_imagenes_fotografo/h0O0JhJygwfjvLRx6byKTnX3IJvZ1GBdrbsmFxBo.jpg',
+                'url' => 'galeria_imagenes_fotografo/IMG-20190825-WA0094.jpg',
                 'tipo' => 'F'
             ],
             [
-                'url' => 'galeria_imagenes_fotografo/GFNKP0idTWkzMGnKe1wZir9vJby1UcUIvmxpwoE3.jpg',
+                'url' => 'galeria_imagenes_fotografo/IMG-20190924-WA0071.jpg',
                 'tipo' => 'F'
             ],
             [
-                'url' => 'galeria_imagenes_fotografo/FncvOrtoUQgb69oHCTs82jHoDODO8VmlPMuJOH0q.jpg',
+                'url' => 'galeria_imagenes_fotografo/IMG-20190924-WA0087.jpg',
                 'tipo' => 'F'
-            ],
+            ]
         ];
         foreach ($imagenes as $img) {
             $image=new Image($img);

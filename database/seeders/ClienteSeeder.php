@@ -33,7 +33,7 @@ class ClienteSeeder extends Seeder
             'id' => $user->id
         ]);
         $image= new Image([
-            'url'=>'perfil/Mvdgt1NIhD2DDWEhBPso3vBPIVPBYeIZS3yJmRcQ.jpg',
+            'url'=>'perfil/Carla.jpeg',
             'tipo' => 'P',
         ]);
         $user->images()->save($image);
@@ -54,7 +54,7 @@ class ClienteSeeder extends Seeder
             'id' => $user->id
         ]);
         $image= new Image([
-            'url'=>'perfil/AD6sYVUNHj551PrJf5Nkjm5yKkXzidJHDFi6IBQ6.jpg',
+            'url'=>'perfil/JohanQuispe.jpg',
             'tipo' => 'P',
         ]);
         $user->images()->save($image);
@@ -75,7 +75,7 @@ class ClienteSeeder extends Seeder
             'id' => $user->id
         ]);
         $image= new Image([
-            'url'=>'perfil/GOVehSYyT7NRERAhM4L7weVPiIhAVetaUNhwC38m.jpg',
+            'url'=>'perfil/Marco.jpg',
             'tipo' => 'P',
         ]);
         $user->images()->save($image);
@@ -96,7 +96,7 @@ class ClienteSeeder extends Seeder
             'id' => $user->id
         ]);
         $image= new Image([
-            'url'=>'perfil/fkM9dFr5MuyY0F2ZDxxSbbQnMoBZwLPggUfHDotD.jpg',
+            'url'=>'perfil/Pedro.jpg',
             'tipo' => 'P',
         ]);
         $user->images()->save($image);
@@ -116,7 +116,7 @@ class ClienteSeeder extends Seeder
             'id' => $user->id
         ]); 
         $image= new Image([
-            'url'=>'perfil/OWtkO6vMQdXHeAkoUGBLVtNXu2arVyKDYe7c6GzB.jpg',
+            'url'=>'perfil/Ruben.jpg',
             'tipo' => 'P',
         ]);
         $user->images()->save($image);
@@ -136,7 +136,88 @@ class ClienteSeeder extends Seeder
             'id' => $user->id
         ]);
         $image= new Image([
-            'url'=>'perfil/Yfct1KrfV6OJV8ySzbq6sIgA97bdyGnlXKyJCXR8.jpg',
+            'url'=>'perfil/Naida.jpg',
+            'tipo' => 'P',
+        ]);
+        $user->images()->save($image);
+         //cliente 7
+         $user = User::create([
+            'ci'=>'27187122',
+            'name' => 'Sabrina',
+            'lastname' => 'Lopez',
+            'gender' => 'F',
+            'birth_date' => '2000-07-31',
+            'number_phone' => '76238294',
+            'email' => 'sabrina@gmail.com',
+            'tipo' => 'C',
+            'password' => bcrypt('12345678')
+        ])->assignRole('Cliente');
+        Cliente::create([
+            'id' => $user->id
+        ]);
+        $image= new Image([
+            'url'=>'perfil/Sabrina.jpg',
+            'tipo' => 'P',
+        ]);
+        $user->images()->save($image);
+
+         //cliente 8
+         $user = User::create([
+            'ci'=>'683782821',
+            'name' => 'Karoline',
+            'lastname' => 'Heredia',
+            'gender' => 'F',
+            'birth_date' => '1998-03-11',
+            'number_phone' => '75453453',
+            'email' => 'karoline@gmail.com',
+            'tipo' => 'C',
+            'password' => bcrypt('12345678')
+        ])->assignRole('Cliente');
+        Cliente::create([
+            'id' => $user->id
+        ]);
+        $image= new Image([
+            'url'=>'perfil/karoline.jpg',
+            'tipo' => 'P',
+        ]);
+        $user->images()->save($image);
+         //cliente 9
+         $user = User::create([
+            'ci'=>'76111229',
+            'name' => 'Karen',
+            'lastname' => 'Miranda',
+            'gender' => 'F',
+            'birth_date' => '2000-01-12',
+            'number_phone' => '7983298',
+            'email' => 'karen@gmail.com',
+            'tipo' => 'C',
+            'password' => bcrypt('12345678')
+        ])->assignRole('Cliente');
+        Cliente::create([
+            'id' => $user->id
+        ]);
+        $image= new Image([
+            'url'=>'perfil/Karen.jpg',
+            'tipo' => 'P',
+        ]);
+        $user->images()->save($image);
+         //cliente 10
+         $user = User::create([
+            'ci'=>'92983221',
+            'name' => 'Orlando',
+            'lastname' => 'Huascar',
+            'gender' => 'F',
+            'birth_date' => '1994-03-11',
+            'number_phone' => '67564455',
+            'email' => 'orlando@gmail.com',
+            'tipo' => 'C',
+            'password' => bcrypt('12345678')
+        ])->assignRole('Cliente');
+        Cliente::create([
+            'id' => $user->id
+        ]);
+        $image= new Image([
+            'url'=>'perfil/Orlando.jpg',
             'tipo' => 'P',
         ]);
         $user->images()->save($image);

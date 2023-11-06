@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Imagen')
+@section('title', 'Clientes')
 
 @section('content_header')
     <h1>Lista de imagenes</h1>
