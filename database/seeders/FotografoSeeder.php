@@ -31,7 +31,9 @@ class FotografoSeeder extends Seeder
 
         Fotografo::create([
             'id' => $user->id,
-            'descripcion' => "Imagenes con buen enfoque"
+            'biography' => "Estudié fotografía a nivel licenciatura",
+            'brand' => "star",
+            'slogan' => "Un buen enfoque captura la esencia"
         ]);
         //PERFIL FOTOGRAFO
         $image = new Image([
@@ -44,7 +46,7 @@ class FotografoSeeder extends Seeder
         $imagenes = [
             [
                 'url' => 'galeria_imagenes_fotografo/IMG-20190519-WA0017.jpg',
-                'tipo' => 'F'
+                'tipo' => 'F',
             ],
             [
                 'url' => 'galeria_imagenes_fotografo/IMG-20190519-WA0052.jpg',

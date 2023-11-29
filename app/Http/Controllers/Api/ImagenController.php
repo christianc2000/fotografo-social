@@ -17,18 +17,22 @@ class ImagenController extends BaseController
     public function analyze_image(Request $request, $id)
     {
         // return $request;
-
+       
         $request->validate([
             'image_id' => 'required|exists:images,id'
         ]);
+       
         //    return $this->sendResponse($request->all(),"entra y valida");
         $clientes = Cliente::all();
+      
         $image = Image::find($request->image_id);
+      
        // return $image;
         $client_rekognition = new RekognitionClient([
             'region' => 'us-east-1',
             'version' => 'latest'
         ]);
+        
         //return dd($client_rekognition);
      //  var_dump($client_rekognition);
         $datos = new Collection();

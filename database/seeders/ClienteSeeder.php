@@ -30,7 +30,9 @@ class ClienteSeeder extends Seeder
         ])->assignRole('Cliente');;
 
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Carla.jpeg',
@@ -51,7 +53,9 @@ class ClienteSeeder extends Seeder
         ])->assignRole('Cliente');
 
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/JohanQuispe.jpg',
@@ -72,7 +76,9 @@ class ClienteSeeder extends Seeder
         ])->assignRole('Cliente');
 
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Marco.jpg',
@@ -93,7 +99,9 @@ class ClienteSeeder extends Seeder
         ])->assignRole('Cliente');
 
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Pedro.jpg',
@@ -113,7 +121,9 @@ class ClienteSeeder extends Seeder
             'password' => bcrypt('12345678')
         ])->assignRole('Cliente');
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]); 
         $image= new Image([
             'url'=>'perfil/Ruben.jpg',
@@ -133,7 +143,9 @@ class ClienteSeeder extends Seeder
             'password' => bcrypt('12345678')
         ])->assignRole('Cliente');
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Naida.jpg',
@@ -153,7 +165,9 @@ class ClienteSeeder extends Seeder
             'password' => bcrypt('12345678')
         ])->assignRole('Cliente');
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Sabrina.jpg',
@@ -174,7 +188,9 @@ class ClienteSeeder extends Seeder
             'password' => bcrypt('12345678')
         ])->assignRole('Cliente');
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/karoline.jpg',
@@ -194,7 +210,9 @@ class ClienteSeeder extends Seeder
             'password' => bcrypt('12345678')
         ])->assignRole('Cliente');
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Karen.jpg',
@@ -214,7 +232,9 @@ class ClienteSeeder extends Seeder
             'password' => bcrypt('12345678')
         ])->assignRole('Cliente');
         Cliente::create([
-            'id' => $user->id
+            'id' => $user->id,
+            'shipping_address'=>'Calle Santiago',
+            'gps'=>'-17.77313,-63.19524'
         ]);
         $image= new Image([
             'url'=>'perfil/Orlando.jpg',

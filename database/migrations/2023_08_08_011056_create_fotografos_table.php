@@ -15,7 +15,9 @@ class CreateFotografosTable extends Migration
     {
         Schema::create('fotografos', function (Blueprint $table) {
             $table->id();
-            $table->String('descripcion');
+            $table->String('biography');
+            $table->String('brand');
+            $table->String('slogan');
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

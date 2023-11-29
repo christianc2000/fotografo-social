@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\web\EventoController;
 use App\Http\Controllers\web\FotografoController;
 use App\Http\Controllers\web\PaqueteController;
 use App\Http\Controllers\web\UserController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class,'index'])->name('welcome.index');
 
 Route::middleware([
     'auth:sanctum',
@@ -41,10 +41,23 @@ Route::middleware([
     Route::get('/fotografo/imagen', [FotografoController::class, 'index_imagen'])->name('fotografo.imagen.index');
     Route::get('/fotografo/upload/imagen', [FotografoController::class, 'upload_imagen'])->name('fotografo.upload.imagen');
     Route::post('/fotografo/upload/imagen/store', [FotografoController::class, 'upload_imagen_store'])->name('fotografo.upload.imagen.store');
+
     //****EVENTO****************************** */
     Route::get('/evento', [EventoController::class, 'index'])->name('evento.index');
     Route::get('/evento/create', [EventoController::class, 'create'])->name('evento.create');
+    Route::post('/evento', [EventoController::class, 'store'])->name('evento.store');
     Route::get('/paqueteshow', [PaqueteController::class, 'show'])->name('paqueteshow');
+    Route::get('/evento/{id}/clientes', [EventoController::class, 'eventoCliente'])->name('evento.cliente');//para ver los clientes vinculados a un evento
+    Route::get('/evento/invitation/{id}', [EventoController::class, 'invitacion'])->name('evento.invitacion');
+    // ***************ACEPTAR EL CORREO************************
+    Route::get('accept-invitation/{id}', [SendEmailController::class, 'acceptInvitation']);
+    Route::post('accept-invitation/{id}', [SendEmailController::class, 'storeAccept'])->name('email.accept');
+    //ruta para enviar correo
+    Route::post('send-email', [SendEmailController::class, 'sendEmail'])->name('email.send');
+    //****************CLIENTE */
+   // Route::get('eventos/vinculados', [EventoController::class, 'eventosCliente'])->name('evento.cliente');
+    //*************PARA VER LOS EVENTOS DE UN CLIENTE DADO */
+    Route::get('evento/cliente/{id}', [EventoController::class, 'eventosClienteOne'])->name('evento.cliente.one');
 });
 
 Auth::routes();

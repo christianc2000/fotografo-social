@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use App\Models\Organizador;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -28,6 +29,11 @@ class OrganizadorSeeder extends Seeder
         ])->assignRole('Organizador');
         Organizador::create([
             'id' => $user->id
+        ]);
+
+       $image = new Image([
+            'url' => 'perfil/organizador.jpg',
+            'tipo' => 'P'
         ]);
     }
 }

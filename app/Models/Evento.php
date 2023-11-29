@@ -15,7 +15,8 @@ class Evento extends Model
         'gps',
         'event_date',
         'organizador_id',
-        'status'
+        'status',
+        'img_event'
     ];
     static $STATUS_ACTIVE = 1; /// Si el evento está activo
     static $STATUS_CANCEL = 2; /// Si el evento está cancelado
@@ -24,5 +25,9 @@ class Evento extends Model
     public function organizador()
     {
         return $this->belongsTo(Organizador::class)->select('*')->join('users','users.id','id');
+    }
+
+    public function vinculacionClientes(){
+        return $this->hasMany(VinculacionCliente::class);
     }
 }

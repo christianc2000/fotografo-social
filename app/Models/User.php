@@ -78,4 +78,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Fotografo::class, 'id', 'id');
     }
+    public function organizador()
+    {
+        return $this->hasOne(Organizador::class, 'id', 'id');
+    }
 }

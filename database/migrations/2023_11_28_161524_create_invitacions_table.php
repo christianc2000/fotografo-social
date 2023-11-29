@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnAlbumIdToTableImages extends Migration
+class CreateInvitacionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddColumnAlbumIdToTableImages extends Migration
      */
     public function up()
     {
-        Schema::table('images', function (Blueprint $table) {
-            $table->unsignedBigInteger('album_id')->nullable();
-            $table->foreign('album_id')->references('id')->on('albums');
+        Schema::create('invitacions', function (Blueprint $table) {
+            $table->id();
+            $table->string('mail');
+            $table->boolean('status');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class AddColumnAlbumIdToTableImages extends Migration
      */
     public function down()
     {
-        Schema::table('images', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('invitacions');
     }
 }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Evento;
 use App\Models\Organizador;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class EventoSeeder extends Seeder
 {
@@ -25,6 +26,39 @@ class EventoSeeder extends Seeder
         //     'organizador_id' => Organizador::first()->id,
         //     'status' => Evento::$STATUS_ACTIVE
         // ]);
+        DB::table('eventos')->insert([
+            [
+                'title' => 'Evento 1',
+                'description' => 'Descripción del evento 1',
+                'address' => 'Dirección 1',
+                'gps' => 'GPS 1',
+                'event_date' => '2023-12-01',
+                'organizador_id' => Organizador::first()->id,
+                'status' => Evento::$STATUS_FINISH,
+                'img_event' => 'https://th.bing.com/th/id/R.157f804611abbfe1bd7dda578d9e81ef?rik=%2bhmvY%2bIc5mkyGw&pid=ImgRaw&r=0'
+            ],
+            [
+                'title' => 'Evento 2',
+                'description' => 'Descripción del evento 2',
+                'address' => 'Dirección 2',
+                'gps' => 'GPS 2',
+                'event_date' => '2023-12-02',
+                'organizador_id' =>Organizador::first()->id,
+                'status' => Evento::$STATUS_FINISH,
+                'img_event' => 'https://th.bing.com/th/id/OIP.p-kggGp3m-J9w1_gqZ98xQHaFj?rs=1&pid=ImgDetMain'
+            ],
+            [
+                'title' => 'Evento 3',
+                'description' => 'Descripción del evento 2',
+                'address' => 'Dirección 2',
+                'gps' => 'GPS 2',
+                'event_date' => '2023-12-02',
+                'organizador_id' =>Organizador::first()->id,
+                'status' => Evento::$STATUS_FINISH,
+                'img_event' => 'https://th.bing.com/th/id/OIP.FBCjHnBztHY8OJxSi5wq5QEXDf?rs=1&pid=ImgDetMain'
+            ],
+            // ... Agrega aquí los otros 8 registros ...
+        ]);
         Evento::create([
             'title' => 'MARATON DE FIN DE MES',
             'description' => 'Evento que incentivará al deporte, organizado por la HAM',

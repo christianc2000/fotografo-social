@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnAlbumIdToTableAlbums extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddColumnAlbumIdToTableAlbums extends Migration
      */
     public function up()
     {
-        Schema::table('albums', function (Blueprint $table) {
-            $table->unsignedBigInteger('father_album_id')->nullable();
-            $table->foreign('father_album_id')->references('id')->on('albums');
+        Schema::create('categorias', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class AddColumnAlbumIdToTableAlbums extends Migration
      */
     public function down()
     {
-        Schema::table('albums', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('categorias');
     }
 }
